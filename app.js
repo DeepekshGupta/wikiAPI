@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // Mongoose connect:
 // mongoose.connect("mongodb://localhost:27017/wikiDB", {useNewURLParser: true});
 const db_url =  "mongodb+srv://"+ process.env.USER_NAME +"@cluster0.krgkwhr.mongodb.net/wikiDB";
-mongoose.connect(db_url, {useNewURLParser: true});
+// mongoose.connect(db_url, {useNewURLParser: true});
 
 
 const articleSchema = {
@@ -151,11 +151,5 @@ app.route("/articles/:articleTitle")
 
 //TODO
 
-let port = process.env.port
-if(port==null || port==" "){
-  port=3000;
-}
+app.listen(process.env.PORT || 3000, () => console.log("server is running on port 3000"))
 
-app.listen(port, function() {
-  console.log("Server started on port 3000");
-});
