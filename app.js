@@ -18,7 +18,7 @@ app.use(express.static("public"));
 // Mongoose connect:
 // mongoose.connect("mongodb://localhost:27017/wikiDB", {useNewURLParser: true});
 const db_url =  "mongodb+srv://"+ process.env.USER_NAME +"@cluster0.krgkwhr.mongodb.net/wikiDB";
-// mongoose.connect(db_url, {useNewURLParser: true});
+mongoose.connect(db_url, {useNewURLParser: true});
 
 
 const articleSchema = {
