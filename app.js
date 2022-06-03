@@ -28,6 +28,10 @@ const articleSchema = {
 
 const Article = mongoose.model("Article", articleSchema);
 
+app.get("/", function(req, res){
+  res.send("The Wikipedia API")
+})
+
 app.route("/articles")
     .get(function(req, res){
         Article.find(function(err, foundArticles){
